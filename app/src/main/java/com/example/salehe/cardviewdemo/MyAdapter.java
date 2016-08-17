@@ -1,6 +1,8 @@
 package com.example.salehe.cardviewdemo;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +24,21 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mTextView,dateInfo;
-        public ViewHolder(View v) {
+        CardView cardView;
+        public ViewHolder(final View v) {
             super(v);
             mTextView = (TextView) v.findViewById(R.id.info_text);
             dateInfo = (TextView) v.findViewById(R.id.date_id);
+
+            /*adding click event on cardView
+            * sah.......*/
+            cardView = (CardView) v.findViewById(R.id.card_view);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    v.getContext().startActivity(new Intent(v.getContext(),HomeDetails.class));
+                }
+            });
         }
     }
 
