@@ -36,7 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    v.getContext().startActivity(new Intent(v.getContext(),HomeDetails.class));
+//                    v.getContext().startActivity(new Intent(v.getContext(),HomeDetails.class));
                 }
             });
         }
